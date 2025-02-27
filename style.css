@@ -27,7 +27,7 @@ p{
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-image: url('nose.jfif'); /* Asegúrate de que la ruta sea correcta */
+    background-image: url('nose2.png'); /* Asegúrate de que la ruta sea correcta */
     background-size: cover;
     background-position: center;
 }
