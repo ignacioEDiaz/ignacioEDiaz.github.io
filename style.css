@@ -1,0 +1,330 @@
+/* Estilos base */
+body {
+    font-family: 'Manrope', 'Noto Sans', sans-serif;
+    background-color: #d6d8da;
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-size: 20px;
+}
+
+.container {
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-image: url('nose.jfif'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-info .name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #0e141b;
+}
+
+.profile-info .role {
+    color: #4e7397;
+    font-size: 16px;
+}
+
+.contact-container {
+    position: relative;
+    text-align: center;
+}
+
+#contact-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#contact-btn.active {
+    background-color: #0056b3;
+    width: 180px;
+}
+
+#social-links {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#social-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+#social-links a:hover {
+    color: #007bff;
+}
+
+#social-links.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.about, .technologies, .education, .projects {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0e141b;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Más columnas en pantallas grandes */
+    gap: 15px;
+}
+
+.tech-item {
+    background-color: #e7edf3;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.tech-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tech-header span {
+    font-size: 16px;
+}
+
+.arrow {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    
+}
+
+.tech-content {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease, margin-top 0.5s ease;
+}
+
+.tech-item.expanded {
+    grid-column: 1 / -1;
+}
+
+.tech-item.expanded .tech-content {
+    max-height: 200px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.tech-item.expanded .arrow {
+    transform: rotate(180deg);
+}
+
+.edu-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.edu-title {
+    font-weight: bold;
+    color: #0e141b;
+}
+
+.edu-degree, .edu-date {
+    font-size: 16px;
+    color: #4e7397;
+}
+
+/* Estilos para la nueva sección de proyectos */
+.projects {
+    padding: 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project {
+  
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-title {
+    font-size: 18px; /* Tamaño más grande para el título */
+    font-weight: bold;
+    margin: 0;
+}
+
+.project-description {
+    font-size: 14px; /* Tamaño más grande para la descripción */
+    color: #64748b;
+    margin: 8px 0 16px; /* Más espacio entre elementos */
+}
+
+.project-button {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 10px 16px; /* Botón más grande */
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px; /* Texto más grande */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+}
+
+.project-button:hover {
+    background-color: #e2e8f0;
+}
+
+.project-image {
+    width: 120px; /* Iconos más grandes */
+    height: 120px; /* Iconos más grandes */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-left: 16px;
+    border: 1px solid #e2e8f0;
+}
+.tech-header{
+    font-weight: bold;
+}
+.tech-grid{
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 85%;
+        margin-top: 50px;
+    }
+    .project h3 {
+        font-size: 27px; /* Títulos de proyectos más grandes */
+        margin-bottom: 30px;
+    }
+    
+    .project p {
+        font-size: 23px; /* Texto de proyectos más grande */
+        margin-bottom: 40px;
+    }
+    .project-image {
+        width: 200px; /* Iconos más grandes */
+        height: 200px; /* Iconos más grandes */
+        object-fit: cover;
+        border-radius: 10px;
+        margin-left: 16px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .edu-title {
+        font-weight: bold;
+        color: #0e141b;
+        font-size: 22px;
+    }
+    
+    .edu-degree, .edu-date {
+        font-size: 20px;
+        color: #4e7397;
+    }
+    .tech-header span{
+        font-size: 18px;
+    }
+    .project-button {
+       
+        padding: 20px 30px; /* Botón más grande */
+        
+        font-size: 18px; /* Texto más grande */
+        font-weight: bold;
+        
+    }
+    #contact-btn {
+       
+        padding: 20px 25px;
+        font-size: 20px;
+        
+    }
+    
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        
+    }
+    
+    .profile-info .name {
+        font-size: 40px;
+      
+    }
+    
+    .profile-info .role {
+    
+        font-size: 26px;
+    }
+    .about {
+        font-size: 16px;
+    }
+    
+
+}
+.profile{
+    border-bottom: #0e141b;
+}
